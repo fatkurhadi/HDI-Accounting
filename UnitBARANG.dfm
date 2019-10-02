@@ -1,0 +1,328 @@
+object FormBARANG: TFormBARANG
+  Left = 192
+  Top = 114
+  Width = 818
+  Height = 599
+  Caption = 'Barang dan Jasa'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poDefault
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 810
+    Height = 565
+    ActivePage = TS_Data_Barang
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object TS_Data_Barang: TTabSheet
+      Caption = 'Data Barang dan Jasa'
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 200
+        Width = 802
+        Height = 337
+        Align = alBottom
+        DataSource = DM.DSBarang1
+        ReadOnly = True
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+        OnCellClick = DBGrid1CellClick
+      end
+      object GroupBox2: TGroupBox
+        Left = 8
+        Top = 8
+        Width = 273
+        Height = 161
+        Caption = 'Cari Data'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object Label1: TLabel
+          Left = 24
+          Top = 32
+          Width = 66
+          Height = 15
+          Caption = 'Berdasarkan'
+        end
+        object Label2: TLabel
+          Left = 24
+          Top = 64
+          Width = 45
+          Height = 15
+          Caption = 'Karakter'
+        end
+        object Edit1: TEdit
+          Left = 104
+          Top = 64
+          Width = 143
+          Height = 23
+          TabOrder = 0
+          OnChange = Edit1Change
+        end
+        object BitBtn1: TBitBtn
+          Left = 87
+          Top = 104
+          Width = 75
+          Height = 25
+          Caption = 'Cari'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          OnClick = BitBtn1Click
+        end
+        object ComboBox1: TComboBox
+          Left = 104
+          Top = 32
+          Width = 145
+          Height = 23
+          ItemHeight = 15
+          TabOrder = 2
+          Items.Strings = (
+            'Kode'
+            'Nama'
+            'Merk')
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 296
+        Top = 16
+        Width = 129
+        Height = 65
+        Caption = 'Kategori'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object ComboBox2: TComboBox
+          Left = 8
+          Top = 24
+          Width = 105
+          Height = 23
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          ItemHeight = 15
+          ParentFont = False
+          TabOrder = 0
+          OnChange = ComboBox2Change
+          Items.Strings = (
+            'Barang'
+            'Jasa')
+        end
+      end
+    end
+    object TS_Barang: TTabSheet
+      Caption = 'Barang dan Jasa'
+      ImageIndex = 1
+      object pnl1: TPanel
+        Left = 0
+        Top = 0
+        Width = 802
+        Height = 41
+        Align = alTop
+        TabOrder = 0
+        object btambah: TBitBtn
+          Left = 16
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'tambah'
+          TabOrder = 0
+          OnClick = btambahClick
+        end
+        object bhapus: TBitBtn
+          Left = 96
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'hapus'
+          TabOrder = 1
+          OnClick = bhapusClick
+        end
+        object bedit: TBitBtn
+          Left = 176
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'edit'
+          TabOrder = 2
+          OnClick = beditClick
+        end
+        object bsimpan: TBitBtn
+          Left = 256
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'simpan'
+          Enabled = False
+          TabOrder = 3
+          OnClick = bsimpanClick
+        end
+        object bbatal: TBitBtn
+          Left = 336
+          Top = 8
+          Width = 75
+          Height = 25
+          Caption = 'batal'
+          Enabled = False
+          TabOrder = 4
+          OnClick = bbatalClick
+        end
+      end
+      object pnl2: TPanel
+        Left = 0
+        Top = 41
+        Width = 802
+        Height = 496
+        Align = alClient
+        Enabled = False
+        TabOrder = 1
+        object GroupBox1: TGroupBox
+          Left = 16
+          Top = 16
+          Width = 689
+          Height = 289
+          Caption = 'Input'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object lbl1: TLabel
+            Left = 40
+            Top = 104
+            Width = 29
+            Height = 15
+            Caption = 'Kode'
+          end
+          object lbl2: TLabel
+            Left = 40
+            Top = 136
+            Width = 30
+            Height = 15
+            Caption = 'Nama'
+          end
+          object lbl3: TLabel
+            Left = 40
+            Top = 168
+            Width = 28
+            Height = 15
+            Caption = 'Merk'
+          end
+          object lbl4: TLabel
+            Left = 40
+            Top = 200
+            Width = 24
+            Height = 15
+            Caption = 'Stok'
+          end
+          object lbl5: TLabel
+            Left = 40
+            Top = 232
+            Width = 32
+            Height = 15
+            Caption = 'Harga'
+          end
+          object dbedt1: TDBEdit
+            Left = 144
+            Top = 104
+            Width = 154
+            Height = 23
+            DataField = 'Kode'
+            DataSource = DM.DSBarang2
+            TabOrder = 0
+          end
+          object dbedt2: TDBEdit
+            Left = 144
+            Top = 136
+            Width = 154
+            Height = 23
+            DataField = 'Nama'
+            DataSource = DM.DSBarang2
+            TabOrder = 1
+          end
+          object dbedt3: TDBEdit
+            Left = 144
+            Top = 168
+            Width = 154
+            Height = 23
+            DataField = 'Merk'
+            DataSource = DM.DSBarang2
+            TabOrder = 2
+          end
+          object dbedt4: TDBEdit
+            Left = 144
+            Top = 200
+            Width = 154
+            Height = 23
+            DataField = 'Stok'
+            DataSource = DM.DSBarang2
+            TabOrder = 3
+          end
+          object dbedt5: TDBEdit
+            Left = 144
+            Top = 232
+            Width = 154
+            Height = 23
+            DataField = 'Harga'
+            DataSource = DM.DSBarang2
+            TabOrder = 4
+          end
+          object GroupBox3: TGroupBox
+            Left = 144
+            Top = 24
+            Width = 121
+            Height = 65
+            Caption = 'Kategori'
+            TabOrder = 5
+            object DBComboBox1: TDBComboBox
+              Left = 8
+              Top = 24
+              Width = 105
+              Height = 23
+              DataField = 'Kategori'
+              DataSource = DM.DSBarang2
+              ItemHeight = 15
+              Items.Strings = (
+                'Barang'
+                'Jasa')
+              TabOrder = 0
+            end
+          end
+        end
+      end
+    end
+  end
+end

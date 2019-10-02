@@ -1,0 +1,52 @@
+unit UnitEDITTOKO;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, INIfiles, StdCtrls, Buttons;
+
+type
+  TFormEDITTOKO = class(TForm)
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    enama: TEdit;
+    ealamat: TEdit;
+    eemail: TEdit;
+    etelpon: TEdit;
+    BitBtn1: TBitBtn;
+    deskripsi: TMemo;
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormEDITTOKO: TFormEDITTOKO;
+
+implementation
+
+uses UnitTOKO;
+
+{$R *.dfm}
+
+procedure TFormEDITTOKO.BitBtn1Click(Sender: TObject);
+var
+Myini : TIniFile;
+begin
+myini := tinifile.Create(ExtractFilePath (Application.exename)+'Toko.ini');
+myini.WriteString('Toko','Nama', enama.text);
+myini.WriteString('Toko','Alamat',ealamat.text);
+myini.WriteString('Toko','Email',eemail.text);
+myini.WriteString('Toko','Telpon',etelpon.text);
+myini.WriteString('Toko','Deskripsi',deskripsi.Lines.GetText);
+myini.Free;
+end;
+
+end.
